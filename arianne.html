@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rose Marianne Sagum | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+  --rose1:#fdf8f6;--rose2:#f8e7e7;--rose3:#e4c1c1;
+  --accent:#c78f92;--text:#2f2f3a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;color:var(--text);
+  background:linear-gradient(120deg,var(--rose1),var(--rose2),var(--rose3));
+  overflow:hidden;height:100vh;position:relative;
+}
+
+/* Sparkles */
+.sparkle{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.sparkle span{position:absolute;width:3px;height:3px;background:rgba(255,255,255,0.6);border-radius:50%;animation:twinkle 6s infinite ease-in-out}
+@keyframes twinkle{
+  0%,100%{opacity:0;transform:translateY(0) scale(1)}
+  50%{opacity:1;transform:translateY(-10px) scale(1.3)}
+}
+
+/* Nav */
+nav{position:fixed;top:20px;right:30px;display:flex;gap:15px;z-index:5}
+nav a{padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.4);
+  text-decoration:none;color:var(--text);font-weight:600;transition:.3s}
+nav a:hover,nav a.active{background:var(--accent);color:#fff}
+
+/* Slides */
+.slide{
+  position:absolute;inset:0;width:100vw;height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;align-items:center;
+  opacity:0;transform:translateY(20px);transition:all 1s ease;
+  padding:80px 60px;z-index:2;
+}
+.slide.active{opacity:1;transform:translateY(0);z-index:3}
+
+/* Text */
+.text-box{max-width:640px;animation:fadeInUp 1s ease both;}
+.text-box .accent{width:80px;height:6px;background:var(--accent);border-radius:5px;margin-bottom:12px}
+.text-box h1{font-family:'Playfair Display',serif;font-size:2.6rem;margin-bottom:.3rem}
+.text-box h2{font-size:1.1rem;color:var(--accent);margin-bottom:1.4rem;letter-spacing:1px}
+.text-box p{line-height:1.8;margin-bottom:12px}
+ul{list-style:none;margin-left:0}
+ul li::before{content:"• ";color:var(--accent);margin-right:4px}
+.separator{height:1px;width:60px;background:var(--accent);margin:10px 0 18px 0}
+
+/* Photo (transparent with rose-gold glow) */
+.photo{display:flex;justify-content:center;align-items:center;position:relative;height:100%}
+.photo::before{
+  content:"";position:absolute;width:80%;height:80%;
+  background:radial-gradient(circle at center,rgba(199,143,146,0.3),transparent 70%);
+  filter:blur(50px);z-index:0;
+}
+.photo img{
+  position:relative;z-index:1;width:80%;height:auto;object-fit:contain;
+  filter:drop-shadow(0 20px 40px rgba(199,143,146,.35)) brightness(1.05) contrast(1.05);
+  mask-image:linear-gradient(to bottom,black 80%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom,black 80%,transparent 100%);
+  transition:transform 1.2s ease,opacity 1s ease;
+}
+.slide.active .photo img{transform:translateY(-10px);opacity:1}
+
+/* Buttons */
+.download-btn{
+  display:inline-block;margin-top:20px;padding:10px 18px;
+  background:var(--accent);color:#fff;border-radius:8px;
+  text-decoration:none;font-weight:600;transition:.3s}
+.download-btn:hover{background:#b47b7b;transform:translateY(-2px)}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* Contact footer icons */
+.contact-footer{
+  margin-top:40px;display:flex;gap:25px;justify-content:center;
+}
+.contact-footer a{
+  color:var(--accent);font-size:1.8rem;transition:.3s ease;
+}
+.contact-footer a:hover{color:#b47b7b;transform:scale(1.2)}
+
+@media(max-width:900px){
+  .slide{grid-template-columns:1fr;text-align:center;padding:60px 40px}
+  .photo{order:-1}
+  .photo img{width:70%}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sparkle overlay -->
+<div class="sparkle" id="sparkle"></div>
+
+<!-- Nav -->
+<nav>
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- Slides -->
+<!-- HOME -->
+<section class="slide active" id="home">
+  <div class="text-box" style="align-self:center;">
+    <div class="accent"></div>
+    <h1 style="font-size:3rem; letter-spacing:1px;">Rose Marianne Sagum</h1>
+    <h2 style="font-size:1.2rem; color:var(--accent); font-weight:500;">IT | Data & Project Handling Enthusiast</h2>
+    <p style="font-style:italic; margin-top:10px; color:#4a4a4a;">Detail-oriented IT professional with a strong background in data management and project execution. Experienced in client servicing and reporting, with a focus on improving operational efficiency and a passion for data handling. </p>
+  </div>
+
+  <div class="photo" style="display:flex;justify-content:center;align-items:center;">
+    <img src="arianne_bgremove.png" alt="Rose Marianne Sagum" style="
+      width:75%;
+      height:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 20px 40px rgba(199,143,146,.35)) brightness(1.05);
+      mask-image:linear-gradient(to bottom,black 85%,transparent 100%);
+      -webkit-mask-image:linear-gradient(to bottom,black 85%,transparent 100%);
+    ">
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="slide" id="about">
+  <div class="text-box" style="align-self:auto;">
+    <div class="accent"></div>
+    <h1>About Me</h1>
+    <div class="separator"></div>
+    <p>🌷 I’m <strong>Rose Marianne Sagum, </strong> <p style="font-style:italic; margin-top:10px; color:#4a4a4a;">call me Arianne for short </p>
+    <p> — an organized, creative, and detail-oriented IT graduate who thrives on creating clarity out of complexity. My passion lies in connecting people, data, and design to build systems that truly work.</p>
+    <p>I believe that good technology isn’t just functional — it’s <em>human-centered</em>. I love combining a clean aesthetic with efficient workflows to make everyday tasks smoother and more delightful.</p>
+    <p style="margin-top:15px;"><strong>Core Traits:</strong><br>🧠 Analytical Thinker 🎨 Creative Vision 💬 Empathetic Collaborator 💪 Growth Mindset</p>
+  </div>
+  <div class="photo"><img src="arianne_bgremove.png" alt=""></div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="slide" id="experience">
+  <div class="text-box" style="align-self:auto;">
+    <div class="accent"></div>
+    <h1>Experience</h1>
+    <div class="separator"></div>
+    
+    <p><strong>Project Specialist – Activasia Inc. (Unilever PH)</strong><br>
+    <em>February 2025 – September 2025</em></p>
+    <p>
+      At Activasia, I supported Unilever’s marketing projects particularly their launch and merch, I handled larger operations and wider client connections.
+      My tasks involved client coordination, supplier communication, and warehouse monitoring to ensure timely and accurate campaign execution. I also managed tracking and reporting using Excel tools like Pivot Tables and XLOOKUP, and project management platforms such as ClickUp and Trello. 
+      That role helped me enhance my data management and project monitoring skills and taught me how to manage multiple priorities in a fast-paced environment.
+    </p>
+
+    <br>
+
+    <p><strong>Purchasing Assistant – Medcore Plus Enterprise</strong><br>
+    <em>June 2024 – February 2025</em></p>
+    <p>
+      I assisted in the procurement and logistics process by organizing supplier quotations, tracking purchases, and maintaining cost records. 
+      I also developed a more efficient documentation system that reduced invoice errors and improved turnaround time for order approvals.
+    </p>
+
+    <br>
+
+    <p style="font-style:italic; color:#a47b7b;">
+      “Every project is a balance of structure and creativity — and I make sure both work together.”
+    </p>
+  </div>
+
+  <div class="photo">
+    <img src="arianne_bgremove.png" alt="Rose Marianne Sagum">
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section class="slide" id="skills">
+  <div class="text-box" style="align-self:auto;">
+    <div class="accent"></div>
+    <h1>Creative & Technical Skills</h1>
+    <div class="separator"></div>
+    <p>🌟 A blend of technical precision and creative thinking — here are the tools and strengths I use to make ideas happen:</p>
+    <ul style="margin-top:10px;">
+      <li>📊 <strong>Data & Analytics:</strong> Excel, Google Sheets, SQL, Data Visualization & Reporting</li>
+      <li>🖥 <strong>Design & Web Tools:</strong> HTML, CSS, Canva, Figma, UI Documentation</li>
+      <li>⚙️ <strong>Workflow Management:</strong> Trello, ClickUp, Slack, Google Workspace</li>
+      <li>💬 <strong>Soft Skills:</strong> Leadership, Critical Thinking, Presentation & Team Coordination</li>
+    </ul>
+    <p style="margin-top:15px;"><em>“Every skill is a brushstroke in the bigger picture of innovation.”</em></p>
+  </div>
+  <div class="photo"><img src="arianne_bgremove.png" alt=""></div>
+</section>
+
+<section class="slide" id="contact">
+  <div class="text-box">
+    <div class="accent"></div>
+    <h1>Contact</h1>
+    <div class="separator"></div>
+    <p><strong>Email:</strong> <a href="mailto:neust.rosemarianne.sagum@gmail.com">neust.rosemarianne.sagum@gmail.com</a><br>
+    <strong>Phone:</strong> +63 915 093 0405<br>
+    <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ariannesagum" target="_blank">linkedin.com/in/ariannesagum</a></p>
+    <a class="download-btn" href="SAGUMROSEMARIANNE-updatedresume8.pdf" download>Download Resume</a>
+
+    <!-- Footer social icons -->
+    <div class="contact-footer">
+      <a href="https://www.instagram.com/_ariichannn/?fbclid=IwY2xjawNbU49leHRuA2FlbQIxMABicmlkETFRS1VDS3FuRFczY3pPemJtAR5clx-KY_aMJYjZ0_4aTLE3wXSaQ_t3SY6GrJieJhEeKQlQ8ywBmXhHufHuKA_aem_SkkRB3c3A4gN3tm6xarg5Q#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/rosemarianne.sagum.3" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://github.com/Arichannn?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+  <div class="photo"><img src="arianne_bgremove.png" alt=""></div>
+</section>
+
+<script>
+// slide navigation
+const slides=document.querySelectorAll('.slide');
+const navLinks=document.querySelectorAll('nav a');
+let current=0;
+function showSlide(i){
+  slides.forEach((s,idx)=>{
+    s.classList.remove('active');
+    navLinks[idx].classList.remove('active');
+  });
+  slides[i].classList.add('active');
+  navLinks[i].classList.add('active');
+  current=i;
+}
+navLinks.forEach((l,i)=>l.addEventListener('click',e=>{
+  e.preventDefault();showSlide(i);
+}));
+window.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight')showSlide((current+1)%slides.length);
+  if(e.key==='ArrowLeft')showSlide((current-1+slides.length)%slides.length);
+});
+
+// sparkles
+const sparkle=document.getElementById('sparkle');
+for(let i=0;i<50;i++){
+  const s=document.createElement('span');
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=(Math.random()*6)+'s';
+  s.style.animationDuration=(4+Math.random()*4)+'s';
+  s.style.opacity=0.2+Math.random()*0.4;
+  sparkle.appendChild(s);
+}
+</script>
+
+</body>
+</html>
